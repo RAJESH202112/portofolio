@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, skyblue, navy);
+      color: #fff;
+    }
+    /* Header Block */
+    .header-block {
+      text-align: center;
+      padding: 2rem;
+      background: skyblue;
+      border: 6px solid navy;
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 900px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      color: #000; /* black text for better contrast */
+    }
+    .header-block img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid navy;
+    }
+    .header-block h1 {
+      margin: 1rem 0 0.2rem;
+      font-size: 2rem;
+      color: navy;
+    }
+    .header-block p {
+      font-style: italic;
+      color: #222;
+    }
+    .quote {
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      text-align: center;
+      font-size: 1.2rem;
+      font-style: italic;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      color: #000;
+    }
+    .quote span {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: navy;
+    }
+    /* Sections */
+    .section {
+      max-width: 900px;
+      margin: 1rem auto;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .section h2 {
+      margin: 0;
+      padding: 1rem;
+      background: rgba(0,0,0,0.6);
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+    .section-content {
+      display: none;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    /* About always visible */
+    .section.about .section-content {
+      display: block !important;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.6rem;
+      margin: 0.4rem 0;
+      border-radius: 5px;
+    }
+    a {
+      color: #ffdd57;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER BLOCK -->
+  <div class="header-block">
+    <img src="myphoto.jpg" alt="My Photo">
+    <h1>Goddaula Rajesh</h1>
+    <p>Passionate Developer | Learner | Dreamer</p>
+  
+    <div class="quote">
+      "Dream is not what you see in sleep,<br>
+      Dream is what that doesn't let you sleep."
+      <span>— Dr. A.P.J. Abdul Kalam</span>
+    </div>
+  </div>
+
+  <!-- Sections -->
+  <div class="section">
+    <h2 onclick="toggleSection(this)">Skills</h2>
+    <div class="section-content">
+      <ul>
+        <li>Programming: C++, Python, Java</li>
+        <li>Web Development: HTML, CSS, JavaScript</li>
+        <li>Database: MySQL, MongoDB</li>
+        <li>Problem Solving & Algorithms</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggleSection(this)">Projects</h2>
+    <div class="section-content">
+      <ul>
+        <li><strong>Portfolio Website</strong> – A personal website showcasing my skills and projects.</li>
+        <li><strong>Chatbot</strong> – Built a chatbot using Python and NLP libraries.</li>
+        <li><strong>Data Visualizer</strong> – An interactive dashboard using Python (Matplotlib/Plotly).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggleSection(this)">Education</h2>
+    <div class="section-content">
+      <ul>
+        <li>Bachelor of Technology (B.Tech) – Computer Science Engineering</li>
+        <li>Intermediate – MPC</li>
+        <li>High School – SSC</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggleSection(this)">Ambitions</h2>
+    <div class="section-content">
+      <p>My ambition is to become a skilled software engineer, contribute to impactful open-source projects, and innovate solutions that make life easier for people globally. I aspire to work in AI/ML and cloud computing fields.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 onclick="toggleSection(this)">Contact</h2>
+    <div class="section-content">
+      <p>Email: <a href="mailto:rajesh@example.com">rajesh@example.com</a></p>
+      <p>Phone: +91-9876543210</p>
+      <p>LinkedIn: <a href="#">linkedin.com/in/rajesh</a></p>
+      <p>GitHub: <a href="#">github.com/rajesh</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Goddaula Rajesh | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleSection(element) {
+      const content = element.nextElementSibling;
+      const isOpen = content.style.display === "block";
+      document.querySelectorAll(".section-content").forEach(sec => {
+        if (!sec.parentElement.classList.contains("about")) {
+          sec.style.display = "none";
+        }
+      });
+      if (!isOpen) content.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+
